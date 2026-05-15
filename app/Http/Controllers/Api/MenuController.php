@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryResource;
+use App\Http\Resources\ModifierResource;
 use App\Models\Category;
 use App\Models\Modifier;
-use App\Http\Resources\ModifierResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class MenuController extends Controller

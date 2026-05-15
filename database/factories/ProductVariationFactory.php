@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Enums\VariationType;
+use App\Models\Product;
 use App\Models\ProductVariation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,8 +20,8 @@ class ProductVariationFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => \App\Models\Product::factory(),
-            'type' => $this->faker->randomElement(\App\Enums\VariationType::cases()),
+            'product_id' => Product::factory(),
+            'type' => $this->faker->randomElement(VariationType::cases()),
             'price' => $this->faker->randomFloat(2, 50, 200),
         ];
     }

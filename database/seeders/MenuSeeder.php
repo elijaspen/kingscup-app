@@ -2,14 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-
+use App\Enums\VariationType;
 use App\Models\Category;
+use App\Models\Modifier;
 use App\Models\Product;
 use App\Models\ProductVariation;
-use App\Models\Modifier;
-use App\Enums\VariationType;
+use Illuminate\Database\Seeder;
 
 class MenuSeeder extends Seeder
 {

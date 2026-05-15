@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\OrderStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->foreignId('barista_id')->nullable()->constrained('users')->nullOnDelete();
             $table->decimal('total_price', 10, 2);
             $table->text('address_text');
-            $table->string('status')->default(\App\Enums\OrderStatus::Pending->value);
+            $table->string('status')->default(OrderStatus::Pending->value);
             $table->timestamps();
         });
     }

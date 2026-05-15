@@ -1,10 +1,9 @@
 <?php
 
-use App\Models\User;
+use App\Enums\OrderStatus;
 use App\Models\Order;
 use App\Models\ProductVariation;
-use App\Enums\UserRole;
-use App\Enums\OrderStatus;
+use App\Models\User;
 
 test('customer can place an order', function () {
     $user = User::factory()->customer()->create();
@@ -16,7 +15,7 @@ test('customer can place an order', function () {
                 'variation_id' => $variation->id,
                 'quantity' => 2,
                 'modifiers' => ['Vanilla'],
-            ]
+            ],
         ],
         'address_text' => '123 Main St',
     ]);

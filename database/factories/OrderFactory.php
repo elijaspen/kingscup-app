@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Enums\OrderStatus;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,10 +20,10 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'customer_id' => \App\Models\User::factory(),
+            'customer_id' => User::factory(),
             'total_price' => $this->faker->randomFloat(2, 100, 1000),
             'address_text' => $this->faker->address(),
-            'status' => \App\Enums\OrderStatus::Pending,
+            'status' => OrderStatus::Pending,
         ];
     }
 }

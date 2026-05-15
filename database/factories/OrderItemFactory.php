@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\ProductVariation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +20,8 @@ class OrderItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'order_id' => \App\Models\Order::factory(),
-            'variation_id' => \App\Models\ProductVariation::factory(),
+            'order_id' => Order::factory(),
+            'variation_id' => ProductVariation::factory(),
             'quantity' => $this->faker->numberBetween(1, 5),
             'modifiers' => [],
         ];

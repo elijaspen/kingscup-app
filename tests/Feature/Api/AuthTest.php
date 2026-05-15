@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\User;
 use App\Enums\UserRole;
+use App\Models\User;
 
 test('user can register', function () {
     $response = $this->postJson('/api/register', [

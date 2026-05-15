@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\VariationType;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductVariation;
@@ -12,7 +13,7 @@ test('it returns the menu catalog', function () {
     ]);
     ProductVariation::factory()->create([
         'product_id' => $product->id,
-        'type' => \App\Enums\VariationType::Hot,
+        'type' => VariationType::Hot,
         'price' => 120,
     ]);
 

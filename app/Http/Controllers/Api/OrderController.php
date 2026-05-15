@@ -7,12 +7,14 @@ use App\Enums\UserRole;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StoreOrderRequest;
 use App\Http\Resources\OrderResource;
+use App\Models\Modifier;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\ProductVariation;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class OrderController extends Controller
 {
@@ -34,7 +36,7 @@ class OrderController extends Controller
         $user = $request->user();
         $address = $request->address_text;
 
-        if (!$address) {
+        if (! $address) {
             $defaultAddress = $user->addresses()->where('is_default', true)->first();
             $address = $defaultAddress?->address_text ?? 'Pickup';
         }
@@ -52,14 +54,14 @@ class OrderController extends Controller
             foreach ($request->items as $item) {
                 $variation = ProductVariation::findOrFail($item['variation_id']);
                 $itemPrice = $variation->price;
-                
+
                 // Add modifier prices if any
-                if (!empty($item['modifiers'])) {
+                if (! empty($item['modifiers'])) {
                     // Check if modifiers are IDs (numeric) or just names (strings)
                     // For this implementation, we expect IDs for price calculation
                     $modifierIds = array_filter($item['modifiers'], 'is_numeric');
-                    if (!empty($modifierIds)) {
-                        $modifierTotal = \App\Models\Modifier::whereIn('id', $modifierIds)->sum('price');
+                    if (! empty($modifierIds)) {
+                        $modifierTotal = Modifier::whereIn('id', $modifierIds)->sum('price');
                         $itemPrice += $modifierTotal;
                     }
                 }
@@ -86,7 +88,7 @@ class OrderController extends Controller
     public function updateStatus(Request $request, Order $order): JsonResponse
     {
         $request->validate([
-            'status' => ['required', 'string', \Illuminate\Validation\Rule::enum(OrderStatus::class)],
+            'status' => ['required', 'string', Rule::enum(OrderStatus::class)],
         ]);
 
         $newStatus = OrderStatus::from($request->status);

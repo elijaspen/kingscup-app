@@ -1,0 +1,29 @@
+Analyzing mobile...                                             
+
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/auth/login_screen.dart:51:53 • deprecated_member_use
+   info • Don't use 'BuildContext's across async gaps • lib/screens/auth/login_screen.dart:109:50 • use_build_context_synchronously
+warning • Unused import: '../../models/models.dart' • lib/screens/barista/barista_dashboard_screen.dart:3:8 • unused_import
+   info • 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre • lib/screens/barista/inventory_management_screen.dart:253:17 • deprecated_member_use
+   info • 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre • lib/screens/checkout/cart_screen.dart:179:29 • deprecated_member_use
+  error • The named parameter 'productId' isn't defined • lib/screens/menu/customize_drink_screen.dart:30:107 • undefined_named_parameter
+  error • The getter 'modifiers' isn't defined for the type 'Product' • lib/screens/menu/customize_drink_screen.dart:71:42 • undefined_getter
+  error • The getter 'modifiers' isn't defined for the type 'Product' • lib/screens/menu/customize_drink_screen.dart:72:43 • undefined_getter
+  error • The getter 'modifiers' isn't defined for the type 'Product' • lib/screens/menu/customize_drink_screen.dart:73:46 • undefined_getter
+  error • The getter 'image' isn't defined for the type 'Product' • lib/screens/menu/customize_drink_screen.dart:103:54 • undefined_getter
+  error • The argument type 'String?' can't be assigned to the parameter type 'String'.  • lib/screens/menu/customize_drink_screen.dart:124:19 • argument_type_not_assignable
+   info • Unnecessary use of multiple underscores • lib/screens/menu/menu_screen.dart:163:45 • unnecessary_underscores
+   info • Unnecessary use of multiple underscores • lib/screens/menu/menu_screen.dart:163:49 • unnecessary_underscores
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss • lib/screens/menu/menu_screen.dart:209:63 • deprecated_member_use
+  error • Target of URI doesn't exist: '../menu/product_detail_screen.dart' • lib/screens/profile/favorites_screen.dart:4:8 • uri_does_not_exist
+  error • The named parameter 'isAvailable' is required, but there's no corresponding argument • lib/screens/profile/favorites_screen.dart:13:7 • missing_required_argument
+  error • The named parameter 'image' isn't defined • lib/screens/profile/favorites_screen.dart:17:9 • undefined_named_parameter
+  error • The named parameter 'available' isn't defined • lib/screens/profile/favorites_screen.dart:19:9 • undefined_named_parameter
+  error • The named parameter 'productId' isn't defined • lib/screens/profile/favorites_screen.dart:20:46 • undefined_named_parameter
+  error • The named parameter 'modifiers' isn't defined • lib/screens/profile/favorites_screen.dart:21:9 • undefined_named_parameter
+  error • The named parameter 'isAvailable' is required, but there's no corresponding argument • lib/screens/profile/favorites_screen.dart:23:7 • missing_required_argument
+  error • The named parameter 'image' isn't defined • lib/screens/profile/favorites_screen.dart:27:9 • undefined_named_parameter
+  error • The named parameter 'available' isn't defined • lib/screens/profile/favorites_screen.dart:29:9 • undefined_named_parameter
+  error • The named parameter 'productId' isn't defined • lib/screens/profile/favorites_screen.dart:30:46 • undefined_named_parameter
+  error • The named parameter 'modifiers' isn't defined • lib/screens/profile/favorites_screen.dart:31:9 • undefined_named_parameter
+  error • The getter 'image' isn't defined for the type 'Product' • lib/screens/profile/favorites_screen.dart:111:29 • undefined_getter
+
