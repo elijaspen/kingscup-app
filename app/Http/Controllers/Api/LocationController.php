@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Http\Resources\BarangayResource;
+use App\Models\Barangay;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+
+class LocationController extends Controller
+{
+    public function index(): AnonymousResourceCollection
+    {
+        return BarangayResource::collection(Barangay::orderBy('name')->get());
+    }
+}
